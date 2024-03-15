@@ -1,4 +1,4 @@
-import streamlit as st 
+import streamlit as st
 import time
 
 ## FORMATS
@@ -18,18 +18,18 @@ st.markdown("# Bienvenido a Streamlit")
 
 ## DISTRIBUTIONS
 
-col1, col2, col3 = st.columns([1,2,1])
+col1, col2, col3 = st.columns([1,3,2])
 col1.markdown("Esto es un texto normal en col1")
 col2.markdown("Esto es un texto normal en col2")
 col3.markdown("Esto es un texto normal en col3")
 
 with col2:
     col21, col22, col23 = st.columns([1,1,1])
-    
+
     col21.markdown("subcol21")
     col22.markdown("subcol22")
     col23.markdown("subcol23")
-    
+
 
 ## IMAGES
 uploaded_photo = st.file_uploader("Sube una foto")
@@ -38,9 +38,9 @@ camera_photo = st.camera_input("Toma una foto con la cámara")
 ## PROGRESS
 progress_bar = st.progress(0)
 
-for percentage in range(100):
-    time.sleep(0.05)
-    progress_bar.progress(percentage+1)
+# for percentage in range(100):
+#     time.sleep(0.05)
+#     progress_bar.progress(percentage+1)
 
 st.success("Subida foto correctamente!")
 
@@ -49,8 +49,8 @@ st.metric(label="Temperatura", value="60 ºC", delta="-3 ºC")
 
 ## EXPANDER
 with st.expander("Pincha aquí para expandir"):
-    st.write("Esta es la informaicón que estaba oculta dentro del expander")
-    
+    st.write("Esta es la información que estaba oculta dentro del expander")
+
     if uploaded_photo is None:
         if camera_photo is None:
             st.write("Sube una foto por favor.")

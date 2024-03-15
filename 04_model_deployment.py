@@ -41,11 +41,11 @@ def format_euro(num):
 def main(): 
     st.title("Income Predictor")
     
-    age = st.text_input("Age","0") 
+    age = st.text_input("Experiencia","0") 
     
     if st.button("Predict"): 
                
-        prediction = model.predict([[float(age)/10]])
+        prediction = model.predict([[float(age)]])
         print(prediction)    
         output  = format_euro(prediction)
 
